@@ -1,0 +1,45 @@
+# Arquivos e pastas de ambiente Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+.venv/
+env/
+venv/
+
+# Arquivos e diretórios do Poetry e pip
+poetry.lock
+*.egg-info/
+dist/
+build/
+
+# Pastas de cache
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# Dados grandes ou temporários
+data/
+models/
+outputs/
+logs/
+artifacts/
+
+# Pastas do Git
+.git/
+.gitignore
+
+# Documentação gerada
+site/
+docs/
+
+# Arquivos de notebook não necessários
+*.ipynb
+
+# Chave do Firebase (caso use via volume externo)
+<!-- .env/serviceAccountKey.json -->
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db

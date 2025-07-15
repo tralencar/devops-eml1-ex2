@@ -15,10 +15,38 @@
 
 ---
 
-## 🔹 Identidade Visual do Projeto
+## 🔹 Visão geral do Projeto
 
 > O projeto **DevOps-EML1-EX2** combina práticas modernas de DevOps e MLOps para garantir a **execução automatizada, segura e rastreável de pipelines de inferência** em Machine Learning, com foco em **infraestrutura leve**, **portabilidade com Docker** e **integração com serviços de nuvem como o Firestore**.
 > A proposta enfatiza **eficiência operacional, reprodutibilidade e confiabilidade em modelos de IA aplicados a dados ambientais críticos**.
+
+## Estrutura do Projeto
+
+<pre>📂 DEVOPS-EML1-EX2                                   ✅ (Diretório raiz do projeto)</pre>
+<pre>├── 📂 .env                                          ✅ (Credenciais de serviço) - Deve ser configurado</pre>
+<pre>│    └── serviceAccountKey.json                      📌 (Chave de autenticação do Firebase/Firestore) - Deve ser configurado</pre>
+<pre>├── 📂 data                                          ✅ (Conjuntos de dados de entrada e processados)</pre>
+<pre>│    ├── 📂 cloud_input                              📌 (Dados para inferência sem a coluna alvo)</pre>
+<pre>│    │    └── water_potability_without_target.csv</pre>
+<pre>│    ├── 📂 original_data                            📌 (Dados brutos com a coluna alvo)</pre>
+<pre>│         └── water_potability.csv</pre>
+<pre>├── 📂 notebooks                                     ✅ (Notebooks exploratórios e do CRISP-DM)</pre>
+<pre>│    ├── best_rf_full.pkl                            📌 (Modelo treinado de Random Forest)</pre>
+<pre>│    ├── best_xgb_full.pkl                           📌 (Modelo treinado de XGBoost)</pre>
+<pre>│    ├── crisp_dm_stages.ipynb                       📌 (Notebook com etapas do CRISP-DM)</pre>
+<pre>│    └── database_init.ipynb                         📌 (Notebook para carregamento dos dados inicias no Firebase/Firestore)</pre>
+<pre>├── 📂 src                                           ✅ (Scripts principais da aplicação)</pre>
+<pre>│    ├── best_rf_full.pkl                            📌 (Modelo Random Forest pronto para produção)</pre>
+<pre>│    ├── firestore_init.py                           📌 (Script para carregamento dos dados inicias no Firebase/Firestore)</pre>
+<pre>│    └── water_scan_main.py                          📌 (Script principal de predição: carrega modelo e grava resultados no Firestore)</pre>
+<pre>├── 📄 .dockerignore                                 📌 (Arquivos ignorados ao construir imagens Docker)</pre>
+<pre>├── 📄 .gitignore                                    📌 (Arquivos ignorados pelo Git)</pre>
+<pre>├── 📄 .python-version                               📌 (Define a versão do Python para ambientes virtuais)</pre>
+<pre>├── 📄 Dockerfile                                    ✅ (Especificação da imagem Docker do projeto)</pre>
+<pre>├── 📄 Makefile                                      ✅ (Comandos de automação do projeto)</pre>
+<pre>├── 📄 pyproject.toml                                ✅ (Configuração de dependências e ferramentas com o Poetry)</pre>
+<pre>├── 📄 README.md                                     📌 (Documentação principal com instruções de uso)</pre>
+<pre>└── 📄 requirements-min-docker.txt                   📌 (Conjunto mínimo de dependências para execução via Docker)</pre>
 
 ---
 

@@ -20,6 +20,19 @@
 > O projeto **DevOps-EML1-EX2** combina práticas modernas de DevOps e MLOps para garantir a **execução automatizada, segura e rastreável de pipelines de inferência** em Machine Learning, com foco em **infraestrutura leve**, **portabilidade com Docker** e **integração com serviços de nuvem como o Firestore**.
 > A proposta enfatiza **eficiência operacional, reprodutibilidade e confiabilidade em modelos de IA aplicados a dados ambientais críticos**.
 
+Neste projeto de classificação da potabilidade da água, foi adotada a metodologia CRISP-DM (Cross Industry Standard Process for Data Mining) devido à sua estrutura bem definida, iterativa e amplamente reconhecida na indústria de ciência de dados.
+
+O CRISP-DM orientou todas as etapas do projeto conforme as seguintes informações:
+
+1. Entendimento do Negócio: Definiu-se o objetivo de prever a potabilidade da água com base em parâmetros físico-químicos.
+2. Entendimento dos Dados: Realizou-se uma análise exploratória para compreender a estrutura, qualidade e desbalanceamento dos dados.
+3. Preparação dos Dados: Incluiu tratamento de valores ausentes, aplicação de SMOTE e divisão em treino e teste.
+4. Modelagem: Modelos como Random Forest e XGBoost foram otimizados com Optuna.
+5. Avaliação: O desempenho dos modelos foi comparado com base em métricas como accuracy, recall e f1-score.
+6. Implantação: A pipeline de inferência foi implementada com o modelo Random Forest (melhor modelo encontrado no treinamento) otimizado, executado dentro de um contêiner Docker. Os dados de entrada foram obtidos do Firestore, o modelo carregado via arquivo .pkl, e os resultados das predições foram gravados de volta no Firestore com o mesmo identificador de origem.
+
+A escolha pelo CRISP-DM garantiu organização, reprodutibilidade e alinhamento entre objetivos técnicos e de negócio, tornando-o ideal para projetos de ciência de dados estruturados como este.
+
 ## Estrutura do Projeto
 
 <pre>📂 DEVOPS-EML1-EX2                                   ✅ (Diretório raiz do projeto)</pre>
@@ -39,14 +52,14 @@
 <pre>│    ├── best_rf_full.pkl                            📌 (Modelo Random Forest pronto para produção)</pre>
 <pre>│    ├── firestore_init.py                           📌 (Script para carregamento dos dados inicias no Firebase/Firestore)</pre>
 <pre>│    └── water_scan_main.py                          📌 (Script principal de predição: carrega modelo e grava resultados no Firestore)</pre>
-<pre>├── 📄 .dockerignore                                 📌 (Arquivos ignorados ao construir imagens Docker)</pre>
-<pre>├── 📄 .gitignore                                    📌 (Arquivos ignorados pelo Git)</pre>
-<pre>├── 📄 .python-version                               📌 (Define a versão do Python para ambientes virtuais)</pre>
+<pre>├── 📄 .dockerignore                                 ✅ (Arquivos ignorados ao construir imagens Docker)</pre>
+<pre>├── 📄 .gitignore                                    ✅ (Arquivos ignorados pelo Git)</pre>
+<pre>├── 📄 .python-version                               ✅ (Define a versão do Python para ambientes virtuais)</pre>
 <pre>├── 📄 Dockerfile                                    ✅ (Especificação da imagem Docker do projeto)</pre>
 <pre>├── 📄 Makefile                                      ✅ (Comandos de automação do projeto)</pre>
 <pre>├── 📄 pyproject.toml                                ✅ (Configuração de dependências e ferramentas com o Poetry)</pre>
-<pre>├── 📄 README.md                                     📌 (Documentação principal com instruções de uso)</pre>
-<pre>└── 📄 requirements-min-docker.txt                   📌 (Conjunto mínimo de dependências para execução via Docker)</pre>
+<pre>├── 📄 README.md                                     ✅ (Documentação principal com instruções de uso)</pre>
+<pre>└── 📄 requirements-min-docker.txt                   ✅ (Conjunto mínimo de dependências para execução via Docker)</pre>
 
 ---
 

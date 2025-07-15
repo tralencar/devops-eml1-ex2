@@ -1,10 +1,10 @@
-# Introdução à Documentação do Projeto DevOps EML1 EX2
+# Introdução à Documentação do Projeto DevOps-EML1-EX2
 
 ## Versão
 `version = "0.1.0"`
 
 ## 🔹 Sobre o Projeto
-⚙️ **DevOps EML1 EX2** é um projeto de **Engenharia de Machine Learning (MLOps)** voltado à **inferência de potabilidade da água**. Ele integra pré-processamento de dados, carregamento e persistência via **Google Firestore** e automação com Docker e Makefile.
+⚙️ **DevOps-EML1-EX2** é um projeto de **Engenharia de Machine Learning (MLOps)** voltado à **inferência de potabilidade da água**. Ele integra pré-processamento de dados, carregamento e persistência via **Google Firestore** e automação com Docker e Makefile.
 
 - **Nome do Projeto**: `devops-eml1-ex2`
 - **Autor**: `tralencar`
@@ -17,7 +17,7 @@
 
 ## 🔹 Identidade Visual do Projeto
 
-> O projeto **DevOps EML1 EX2** combina práticas modernas de DevOps e MLOps para garantir a **execução automatizada, segura e rastreável de pipelines de inferência** em Machine Learning, com foco em **infraestrutura leve**, **portabilidade com Docker** e **integração com serviços de nuvem como o Firestore**.
+> O projeto **DevOps-EML1-EX2** combina práticas modernas de DevOps e MLOps para garantir a **execução automatizada, segura e rastreável de pipelines de inferência** em Machine Learning, com foco em **infraestrutura leve**, **portabilidade com Docker** e **integração com serviços de nuvem como o Firestore**.
 > A proposta enfatiza **eficiência operacional, reprodutibilidade e confiabilidade em modelos de IA aplicados a dados ambientais críticos**.
 
 ---

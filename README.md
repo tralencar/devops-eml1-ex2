@@ -82,9 +82,51 @@ poetry install
 
 ---
 
+## 🔹 Configuração Inicial do Google Cloud Firestore
+
+Para que o pipeline possa **carregar e salvar predições no Firestore**, é necessário realizar uma configuração inicial no **Firebase** do Google. Siga os passos a seguir:
+
+### 1️⃣ Crie um Projeto no Google Cloud
+
+Siga os passos no seguinte vídeo ["Criando um banco de dados do Cloud Firestore"](https://www.youtube.com/watch?v=aYyDjtacyO4)
+
+1. Faça login na sua conta do gmail.
+2. Acesse o site: [https://firebase.google.com](https://firebase.google.com)
+3. Clique em **Go to console** na parte superior direita.
+4. Crie um novo projeto com o nome (devops-eml1-ex2).
+5. Anote o `ID do Projeto (devops-eml1-ex2)` para uso posterior.
+
+### 2️⃣ Ative o Firestore
+
+1. No menu lateral, acesse **Firestore Database**.
+2. Clique em **Criar banco de dados**.
+3. Escolha o **modo de teste** e a localização desejada. Clique em **avançar**.
+4. Crie a **coleção `devops-eml1-ex2`**. Clique em **ativar**.
+
+### 3️⃣ Gere a Chave de Serviço
+
+1. Acesse **Botão de engrenagem ao lado do texto (Visão geral do projeto)** na parte superior esquerda da tela.
+2. Clique em **Configuração do projeto**.
+3. Clique na aba **Contas de serviço**.
+4. Clique na opção **Python**.
+5. Clique no botão **Gerar nova chave privada**.
+6. Renomei o arquivo `.json` com o nome `serviceAccountKey.json`.
+7. Baixe o arquivo `.json` e salve em `.env/serviceAccountKey.json` no seu projeto local.
+
+### 4️⃣ Estrutura Esperada
+
+Seu projeto deverá conter:
+```
+devops-eml1-ex2/
+├── .env/
+│   └── serviceAccountKey.json  ← 🔐 Chave do Firebase
+```
+
+---
+
 ## 🔹 Executar Pipeline de Predição
 
-## 🔹 Subir Dados iniciais de teste para Firestore
+### 1️⃣ Subir Dados iniciais de teste para Firestore
 
 ```bash
 make project-init
@@ -92,7 +134,7 @@ make project-init
 
 ---
 
-### Com Docker:
+### 2️⃣ Com Docker:
 ```bash
 make build
 make run
@@ -100,7 +142,7 @@ make run
 
 ---
 
-## 🔹 Verificar Instalação
+### 🔹 Verificar Instalação
 
 ```bash
 poetry run python -c "import pandas; print('Instalação bem-sucedida!')"

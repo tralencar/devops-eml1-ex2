@@ -47,8 +47,3 @@ docker-run:
 ## Remove imagem Docker (limpeza)
 clean:
 	docker rmi $(IMAGE_NAME) || true
-
-## Rebuild completo (limpa e recria)
-rebuild: clean build
-
-

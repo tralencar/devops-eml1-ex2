@@ -98,8 +98,11 @@ A escolha pelo CRISP-DM garantiu organização, reprodutibilidade e alinhamento 
 ### 1️⃣ Clone o repositório
 
 ```bash
-git clone https://github.com/tralencar/devops_eml1_ex2.git
-cd devops_eml1_ex2
+git clone https://github.com/tralencar/devops-eml1-ex2.git
+```
+
+```bash
+cd devops-eml1-ex2
 ```
 
 ### 2️⃣ Instale o Poetry (se necessário)
@@ -112,6 +115,9 @@ pip install poetry
 
 ```bash
 poetry config virtualenvs.in-project true
+```
+
+```bash
 poetry shell
 ```
 
@@ -169,17 +175,29 @@ devops-eml1-ex2/
 
 ### 1️⃣ Subir Dados iniciais de teste para Firestore
 
+> Depois da configuração inicial do Google Cloud Firestore é necessário adicionar os primeiros dados no banco de dados Firestore. Para isso, execute o seguinte comando no terminal de comando:
+
 ```bash
 make project-init
 ```
 
+> Os dados iniciais foram adicionados no Firebase com a coluna (Potability) sem informações ainda, pois esta coluna será completada com base na predição do modelo de Machine Learning nas etapas seguintes.
+
 ---
 
 ### 2️⃣ Com Docker:
+
+> Abra o docker desktop e em seguida execute os seguintes comandos no terminal de comando no diretório do projeto:
+
 ```bash
 make build
-make run
 ```
+
+```bash
+make docker-run
+```
+
+> Os dados foram atualizados no Firebase para a coluna (Potability) com base nas predições do modelo de Machine Learning.
 
 ---
 
@@ -199,6 +217,9 @@ O projeto oferece uma série de comandos via `make` para facilitar a automação
 
 ```bash
 make lock         # Gera o poetry.lock com a versão 1.8.3 do Poetry
+```
+
+```bash
 make project-init # Instala dependências e inicializa o Firestore com os dados CSV
 ```
 
@@ -212,9 +233,14 @@ make run         # Executa o pipeline principal de predição com poetry
 
 ```bash
 make build       # Cria a imagem Docker
+```
+
+```bash
 make docker-run  # Executa a imagem Docker
+```
+
+```bash
 make clean       # Remove a imagem Docker
-make rebuild     # Limpa e reconstrói a imagem Docker
 ```
 
 ---
